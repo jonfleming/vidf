@@ -1,4 +1,4 @@
-module main
+module github.com/jonfleming/vidf
 
 go 1.22.5
 
