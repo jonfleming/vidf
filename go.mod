@@ -1,4 +1,4 @@
-module github.com/jonfleming/cmd/vidf
+module vidf
 
 go 1.22.5
 
