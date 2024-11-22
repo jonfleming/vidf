@@ -87,7 +87,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	// Print the URL of the first video
+	// Print the title and URL of the first video
 	if len(result.Items) > 0 {
 		// Get the title of the video
 		title := result.Items[0].Snippet.Title
