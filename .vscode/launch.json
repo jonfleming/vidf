@@ -10,7 +10,7 @@
             "request": "launch",
             "mode": "auto",
             "program": "${fileDirname}",
-            "args": ["VectorShift: Create Your PERSONAL AI Agents"]
+            "args": ["-createTitleFile","Why Article 4 of the US Constitution matters"],
         }
     ]
 }
