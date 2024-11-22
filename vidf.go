@@ -17,6 +17,8 @@ const (
 	youtubeAPIURL = "https://www.googleapis.com/youtube/v3/search"
 )
 
+const version = "1.3.1"
+
 type YouTubeResponse struct {
 	Items []struct {
 		ID struct {
@@ -30,6 +32,7 @@ type YouTubeResponse struct {
 
 func main() {
 	if len(os.Args) < 2 {
+		fmt.Println("Vidf version", version)
 		fmt.Println("Please provide a search query as a command-line argument.")
 		os.Exit(1)
 	}
