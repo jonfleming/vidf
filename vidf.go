@@ -18,7 +18,7 @@ const (
 	youtubeAPIURL = "https://www.googleapis.com/youtube/v3/search"
 )
 
-const version = "1.3.1"
+const version = "1.3.2"
 
 type YouTubeResponse struct {
 	Items []struct {
@@ -97,7 +97,7 @@ func main() {
 		title := result.Items[0].Snippet.Title
 
 		// Replace entities (&#39;) with characters
-		replacer := strings.NewReplacer("&#39;", "'", "&quot;", "\"", "&amp;", "&")
+		replacer := strings.NewReplacer("&#39;", "'", "&quot;", "\"", "&amp;", "&", " ", " ")
 		title = replacer.Replace(title)
 		videoID := result.Items[0].ID.VideoID
 		videoURL := fmt.Sprintf("https://www.youtube.com/watch?v=%s&title=%s", videoID, title)
