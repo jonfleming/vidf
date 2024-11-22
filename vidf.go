@@ -1,3 +1,4 @@
+// go install github.com/jonfleming/vidf@latest
 package main
 
 import (
