@@ -22,6 +22,9 @@ type YouTubeResponse struct {
 		ID struct {
 			VideoID string `json:"videoId"`
 		} `json:"id"`
+		Snippet struct {
+			Title string `json:"title"`
+		} `json:"snippet"`
 	} `json:"items"`
 }
 
@@ -86,8 +89,14 @@ func main() {
 
 	// Print the URL of the first video
 	if len(result.Items) > 0 {
+		// Get the title of the video
+		title := result.Items[0].Snippet.Title
+
+		// Replace entities (&#39;) with characters
+		replacer := strings.NewReplacer("&#39;", "'", "&quot;", "\"", "&amp;", "&")
+		title = replacer.Replace(title)
 		videoID := result.Items[0].ID.VideoID
-		videoURL := fmt.Sprintf("https://www.youtube.com/watch?v=%s", videoID)
+		videoURL := fmt.Sprintf("https://www.youtube.com/watch?v=%s&title=%s", videoID, title)
 		fmt.Println(videoURL)
 	} else {
 		fmt.Println("No videos found.")
